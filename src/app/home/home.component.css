@@ -1,0 +1,42 @@
+.home-wrapper {
+    height: 100vh;
+    width: 100vw;
+    background: linear-gradient(0deg, rgba(66, 66, 66, 0.3), rgba(88, 88, 88, 0.3)), url('../../assets/images/hero-bg.jpg');
+    background-position: -70% 0;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.hero-title {
+    width: 40vw;
+}
+
+.hero-title img {
+    width: 100%;
+    height: auto;
+}
+
+.btn-wrapper {
+    height: 20vh;
+    width: 40vw;
+}
+
+.btn {
+    margin-top: 10%;
+    height: 100%;
+    width: 100%;
+    font-size: 1.7rem;
+    font-weight: 900;
+    color: #1d1d1d;
+    background-color: #656975;
+    border-radius: 10px;
+    border: 2px solid #eed91e;
+    /* background-image: url("../../assets/images/kylo-ren.gif"); */
+    background-size: auto 100%;
+    background-position: left;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
