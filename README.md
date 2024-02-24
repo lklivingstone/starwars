@@ -20,6 +20,7 @@ Enabled caching for repetitive requests using HTTP Interceptors
 # Additional Task
 * Added GitHub Workflow for Testing and Code Coverage Report
 * Download Code Coverage Report for the ApiService as GitHub Artifacts
+* For Invalid URL, created a Wildcard Route, check: https://starwarsbylk.netlify.app/asd
 
 #### Unit Test of Service
 ![Screenshot (271)](https://github.com/lklivingstone/starwars/assets/74340009/c18af94a-36ba-49c4-b11e-b6ed15188c70)
