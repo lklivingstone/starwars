@@ -1,1 +1,175 @@
-<p>planetslist works!</p>
+<div class="plant-list-wrapper">
+    <div *ngIf="loadingPlanets" class="loading-screen">
+        <h1>Loading...</h1>
+    </div>
+    <div class="list-container">
+        <div *ngFor="let planet of planetList" class="planet-card">
+            <div *ngIf="planet.isExpanded" class="close-btn-container">
+                <img src="../../../../assets/images/close-btn.png" alt="close-btn" class="close-btn"
+                    (click)="expandPlanetCard(planet, true)">
+            </div>
+            <div *ngIf="!loadingPlanets"  class="outer-circle">
+                <div class="inner-circle" (click)="expandPlanetCard(planet, false)"
+                    [ngClass]="{'expanded': planet.isExpanded}">
+                    <h2 *ngIf="!planet.isExpanded" class="planet-name">{{ planet.name }}</h2>
+                    <div *ngIf="!planet.isExpanded" class="planet-desc">
+                        <p>Rotation Period: {{ planet.rotation_period === 'unknown' ? '-' : planet.rotation_period }}</p>
+                        <p>Orbital Period: {{ planet.orbital_period === 'unknown' ? '-' : planet.orbital_period }}</p>
+                    </div>
+                    <div *ngIf="planet.isExpanded" class="expanded-planet-wrapper">
+                        <div class="planet-name-container">
+                            <h1>
+                                {{ planet.name }}
+                            </h1>
+                        </div>
+                        <div class="planet-description-container">
+                            <div class="planet-description-left">
+                                <div class="each-planet-description">
+                                    <h3>
+                                        Rotation Period
+                                    </h3>
+                                    <p>
+                                        {{ planet.rotation_period }}
+                                    </p>
+                                </div>
+                                <div class="each-planet-description">
+                                    <h3>
+                                        Orbital Period
+                                    </h3>
+                                    <p>
+                                        {{ planet.orbital_period }}
+                                    </p>
+                                </div>
+                                <div class="each-planet-description">
+                                    <h3>
+                                        Diameter
+                                    </h3>
+                                    <p>
+                                        {{ planet.diameter }}
+                                    </p>
+                                </div>
+                                <div class="each-planet-description">
+                                    <h3>
+                                        Climate
+                                    </h3>
+                                    <p>
+                                        {{ planet.climate }}
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="planet-description-right">
+                                <div class="each-planet-description">
+                                    <h3>
+                                        Gravity
+                                    </h3>
+                                    <p>
+                                        {{ planet.gravity }}
+                                    </p>
+                                </div>
+                                <div class="each-planet-description">
+                                    <h3>
+                                        Terrain
+                                    </h3>
+                                    <p>
+                                        {{ planet.terrain }}
+                                    </p>
+                                </div>
+                                <div class="each-planet-description">
+                                    <h3>
+                                        Surface Water
+                                    </h3>
+                                    <p>
+                                        {{ planet.surface_water }}
+                                    </p>
+                                </div>
+                                <div class="each-planet-description">
+                                    <h3>
+                                        Population
+                                    </h3>
+                                    <p>
+                                        {{ planet.population }}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="planet-population-btn-container">
+                            <button class="planet-population-btn" (click)="toggleResidentsContainer(planet, true)">
+                                <span></span>
+                                Residents
+                            </button>
+                        </div>
+
+                        <div class="residents-container" [ngClass]="{'show': showResidentsContainer}">
+                            <div *ngIf="planet.residents.length > 0" class="resident-details-container">
+                                <div
+                                *ngIf="loadingResidentDetails"
+                                class="resident-loading"
+                                >
+                                    <p>Loading...</p>
+                                </div>
+                                <div
+                                class="resident-details-each"
+                                *ngIf="!loadingResidentDetails"
+                                >
+                                    <h3>Name: {{ currentResidentDetails.name }}</h3>
+                                    <p></p>
+                                </div>
+                                <div 
+                                class="resident-details-each"
+                                *ngIf="!loadingResidentDetails"
+                                >
+                                    <h3>Height: {{ currentResidentDetails.height }} </h3>
+                                    <p></p>
+                                </div>
+                                <div
+                                class="resident-details-each"
+                                *ngIf="!loadingResidentDetails"
+                                >
+                                    <h3>Mass: {{ currentResidentDetails.mass }}</h3>
+                                    <p></p>
+                                </div>
+                                <div
+                                class="resident-details-each"
+                                *ngIf="!loadingResidentDetails"
+                                >
+                                    <h3>Gender: {{ currentResidentDetails.gender }}</h3>
+                                    <p></p>
+                                </div>
+                            </div>
+                            <div
+                            *ngIf="planet.residents.length > 0"
+                            class="resident-cards"
+                            >
+                                <div class="resident-cards-wrapper">
+
+                                </div>
+                                <div
+                                *ngFor="let resident of planet.residents"
+                                class="resident-card"
+                                [ngClass]="{'selected-resident': currentResidentID === +resident.split('/')[5]}" (click)="setCurrentResidentID(resident.split('/')[5])"
+                                >
+                                    <div class="resident-name">
+                                        <h3>
+                                            Resident: {{ resident.split('/')[5] }}
+                                        </h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div *ngIf="planet.residents.length === 0" class="resident-none">
+                                <h1>Looks abandoned :(</h1>
+                                <p>
+                            </div>
+                            <div class="resident-btn-container">
+                                <button (click)="toggleResidentsContainer(planet, false)">
+                                    <span></span>
+                                    Return
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

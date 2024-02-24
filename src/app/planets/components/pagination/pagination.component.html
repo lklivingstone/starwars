@@ -1,1 +1,19 @@
-<p>pagination works!</p>
+<div class="pagination-wrapper">
+    <div class="pagination-buttons">
+        <button (click)="onSelectPage(currentPageNumber - 1)" class="pagination-button" *ngIf="currentPageNumber > 1">
+            <span class="arrow-icon">&lt;</span>
+        </button>
+        <button (click)="onSelectPage(1)" class="pagination-button selected" *ngIf="currentPageNumber === 1">1</button>
+        <button (click)="onSelectPage(1)" class="pagination-button not-selected"
+            *ngIf="currentPageNumber !== 1">1</button>
+        <button class="pagination-button selected" *ngIf="currentPageNumber > 1 && currentPageNumber < 6">
+            {{ currentPageNumber }}
+        </button>
+        <button (click)="onSelectPage(6)" class="pagination-button selected" *ngIf="currentPageNumber === 6">6</button>
+        <button (click)="onSelectPage(6)" class="pagination-button not-selected"
+            *ngIf="currentPageNumber !== 6">6</button>
+        <button (click)="onSelectPage(currentPageNumber + 1)" class="pagination-button" *ngIf="currentPageNumber !== 6">
+            <span class="arrow-icon">&gt;</span>
+        </button>
+    </div>
+</div>

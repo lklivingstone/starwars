@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HTTP_INTERCEPTORS, HttpClientModule } from  '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -8,6 +9,9 @@ import { HomeModule } from './home/home.module';
 import { PlanetsModule } from './planets/planets.module';
 
 import { SwapiService } from './service/swapi.service';
+import { CacheService } from './service/cache-service/cache.service';
+
+import { CacheInterceptor } from './interceptors/cache-interceptor/cache.interceptor';
 
 @NgModule({
   declarations: [
@@ -15,12 +19,20 @@ import { SwapiService } from './service/swapi.service';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     HomeModule,
     PlanetsModule
   ],
   providers: [
-    SwapiService
+    SwapiService,
+    CacheService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: CacheInterceptor,
+      multi: true
+    }
+
   ],
   bootstrap: [AppComponent]
 })

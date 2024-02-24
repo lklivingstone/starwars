@@ -6,5 +6,4 @@ import { Component } from '@angular/core';
   styleUrl: './planets.component.css'
 })
 export class Planets {
-
 }

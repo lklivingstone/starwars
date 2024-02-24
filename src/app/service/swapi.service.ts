@@ -17,6 +17,7 @@ export interface StarWarsPlanet {
   created: string;
   edited: string;
   url: string;
+  isExpanded?: boolean;
 }
 
 export interface StarWarsAPIResult {
@@ -24,6 +25,13 @@ export interface StarWarsAPIResult {
   next: string | null;
   previous: string | null;
   results: StarWarsPlanet[];
+}
+
+export interface ResidentDetails {
+  name: number;
+  height: string;
+  mass: string;
+  gender: string;
 }
 
 @Injectable({
@@ -41,4 +49,9 @@ export class SwapiService {
     );
   }
 
+  getResidentDetails(residentID: number): Observable<ResidentDetails> {
+    return this.httpClient.get<ResidentDetails>(
+      `https://swapi.dev/api/people/${residentID}/`
+    )
+  }
 }

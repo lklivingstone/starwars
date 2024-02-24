@@ -1,0 +1,43 @@
+.pagination-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-bottom: 16px;
+    padding-top: 5px;
+}
+
+.pagination-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #1a202c;
+    margin-top: 8px;
+}
+
+.selected {
+    background-color: rgb(194, 194, 194);
+}
+
+.not-selected:hover {
+    background-color: rgb(194, 194, 194);
+}
+
+.pagination-button {
+    padding: 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 0 5px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+}
+
+
+.pagination-button .arrow-icon {
+    width: 16px;
+    height: 16px;
+    fill: currentColor;
+}

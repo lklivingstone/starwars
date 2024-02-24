@@ -1,0 +1,12 @@
+.nav-wrapper {
+    height: 80px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+img {
+    height: 90%;
+    width: auto;
+}
