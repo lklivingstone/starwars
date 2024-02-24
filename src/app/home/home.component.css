@@ -40,3 +40,20 @@
     background-repeat: no-repeat;
     cursor: pointer;
 }
+
+@media (max-width: 1500px) {
+    .btn-wrapper {
+        height: 12vh;
+    }
+}
+
+@media (max-width: 1000px) {
+    .hero-title {
+        width: 80vw;
+    }
+
+    .btn-wrapper {
+        height: 10vh;
+        width: 80vw;
+    }
+}

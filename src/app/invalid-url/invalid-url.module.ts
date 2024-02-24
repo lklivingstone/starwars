@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
+
 import { InvalidURL } from './invalid-url.component';
 
 
@@ -9,7 +11,8 @@ import { InvalidURL } from './invalid-url.component';
     InvalidURL
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule
   ]
 })
 export class InvalidURLModule { }

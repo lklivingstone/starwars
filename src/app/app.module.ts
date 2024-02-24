@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 
 import { HomeModule } from './home/home.module';
 import { PlanetsModule } from './planets/planets.module';
+import { InvalidURLModule } from './invalid-url/invalid-url.module';
 
 import { SwapiService } from './service/swapi.service';
 import { CacheService } from './service/cache-service/cache.service';
@@ -22,7 +23,8 @@ import { CacheInterceptor } from './interceptors/cache-interceptor/cache.interce
     HttpClientModule,
     AppRoutingModule,
     HomeModule,
-    PlanetsModule
+    PlanetsModule,
+    InvalidURLModule
   ],
   providers: [
     SwapiService,
