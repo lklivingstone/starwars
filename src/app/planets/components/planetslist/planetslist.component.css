@@ -29,27 +29,34 @@
 }
 
 .planet-card {
-    width: 30vw;
-    height: 30vw;
     padding: 2vw;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-@media (min-width: 951px) and (max-width: 1600px) {
+/* @media (min-width: 951px) and (max-width: 1600px) {
+
+    .planet-name {
+        font-size: 400px;
+    }
+
+    .planet-desc p {
+        font-size: 2vw;
+    }
+
     .planet-card {
         width: 45vw;
         height: 45vw;
     }
-}
+} */
 
-@media (max-width: 950px) {
+/* @media (max-width: 950px) {
     .planet-card {
         width: 80vw;
         height: 80vw;
     }
-}
+} */
 
 .outer-circle {
     width: 80%;
@@ -123,6 +130,7 @@
 .expanded-planet-wrapper {
     height: 100%;
     width: 100%;
+    padding: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -139,39 +147,49 @@
     font-size: 130px;
 }
 
-@media (max-width: 1200px) {
+
+
+/* @media (max-width: 1200px) {
     .planet-description-container {
-        flex: 1;
-        display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        padding: 0;
     }
 
     .planet-description-left {
         align-items: center;
+        text-align: center;
         padding: 0;
     }
-    
+
     .planet-description-right {
         align-items: center;
+        text-align: center;
         padding: 0;
     }
-}
 
-@media (min-width: 1200px) {
+    .planet-name-container h1 {
+        font-size: 90px;
+    }
+
+    .each-planet-description p {
+        font-size: 60px;
+    }
+} */
+
+
+/* @media (min-width: 1200px) {
 
     .planet-description-left {
         align-items: flex-start;
         padding-left: 20%;
     }
-    
+
     .planet-description-right {
         align-items: flex-start;
         padding-left: 20%;
     }
-}
+} */
 
 .planet-description-container {
     flex: 5;
@@ -184,14 +202,15 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
+    /* background-color: blue; */
 }
 
 .planet-description-right {
     flex: 1;
     display: flex;
     justify-content: center;
-    padding-left: 20%;
     flex-direction: column;
+    /* background-color: green; */
 }
 
 .planet-description-container h3 {
@@ -272,12 +291,18 @@
 
 .resident-details-container {
     height: 25%;
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
     /* border-bottom: 1 px solid #f3f3f3; */
     /* background-color: #3f3f3f1c; */
     /* background-color: grey; */
 }
+
+/* @media (max-width: 900px) {
+    
+} */
+
 
 .resident-details-each {
     width: 45vw;
@@ -301,7 +326,6 @@
 
 
 .resident-card {
-    width: 40%;
     height: 15%;
     margin: 1% 5%;
     display: flex;
@@ -346,4 +370,96 @@
     border: none;
     color: #3f3f3f;
     font-size: 30px;
+}
+
+@media (min-width: 1101px) {
+
+    .planet-name {
+        font-size: 4vw;
+    }
+
+    .planet-desc p {
+        font-size: 2vw;
+    }
+
+    .planet-card {
+        width: 30vw;
+        height: 30vw;
+    }
+}
+
+@media (max-width: 1100px) {
+
+    .planet-name {
+        font-size: 60px;
+    }
+
+    .planet-desc p {
+        font-size: 25px;
+    }
+
+    .planet-card {
+        width: 45vw;
+        height: 45vw;
+    }
+
+    .planet-name-container h1 {
+        font-size: 90px;
+    }
+}
+
+@media (max-width: 800px) {
+
+    .planet-name {
+        font-size: 50px;
+    }
+
+    .planet-desc p {
+        font-size: 20px;
+    }
+
+    .planet-card {
+        width: 90vw;
+        height: 90vw;
+    }
+
+    .planet-description-container {
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .planet-name-container h1 {
+        font-size: 50px;
+    }
+
+    .each-planet-description h3 {
+        font-size: 25px;
+    }
+
+    .each-planet-description p {
+        font-size: 20px;
+    }
+
+    .planet-population-btn-container button {
+        font-size: 20px;
+    }
+
+    .resident-btn-container button {
+        font-size: 20px;
+    }
+
+    .resident-card {
+        width: 90%;
+    }
+
+    .resident-details-each {
+        width: 90vw;
+    }
+}
+
+@media (min-width: 800px) {
+    .resident-card {
+        width: 40%;
+    }
 }
