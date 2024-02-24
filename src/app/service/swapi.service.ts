@@ -28,7 +28,7 @@ export interface StarWarsAPIResult {
 }
 
 export interface ResidentDetails {
-  name: number;
+  name: string;
   height: string;
   mass: string;
   gender: string;

@@ -26,29 +26,7 @@ export class PlanetslistComponent implements OnInit, OnDestroy {
 
   loadingResidentDetails: Boolean = false;
   loadingPlanets: Boolean = false;
-
-  sampleResidents = [
-    "https://swapi.dev/api/people/1/",
-				"https://swapi.dev/api/people/2/",
-				"https://swapi.dev/api/people/4/",
-				"https://swapi.dev/api/people/6/",
-				"https://swapi.dev/api/people/7/",
-				"https://swapi.dev/api/people/8/",
-				"https://swapi.dev/api/people/9/",
-				"https://swapi.dev/api/people/11/",
-				"https://swapi.dev/api/people/43/",
-				"https://swapi.dev/api/people/62/",
-        "https://swapi.dev/api/people/1/",
-				"https://swapi.dev/api/people/2/",
-				"https://swapi.dev/api/people/4/",
-				"https://swapi.dev/api/people/6/",
-				"https://swapi.dev/api/people/7/",
-				"https://swapi.dev/api/people/8/",
-				"https://swapi.dev/api/people/9/",
-				"https://swapi.dev/api/people/11/",
-				"https://swapi.dev/api/people/43/",
-				"https://swapi.dev/api/people/62/"
-  ]
+  showResidentsContainer: boolean = false;
 
   constructor(
     private router: Router,
@@ -58,8 +36,6 @@ export class PlanetslistComponent implements OnInit, OnDestroy {
   ) {
     
   }
-
-  showResidentsContainer: boolean = false;
 
   setCurrentResidentID(residentID: string) {
     this.currentResidentID = +residentID;

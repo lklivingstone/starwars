@@ -1,14 +1,3 @@
-/* body {
-    background: linear-gradient(0deg, rgba(66, 66, 66, 0.3), rgba(88, 88, 88, 0.3)), url('../../../../assets/images/planets-bg.jpg');
-} */
-
-/* .planets-wrapper {
-    background-image: url('../../../../assets/images/planets-bg-4.png');
-    min-height: 100vh;
-    background-size: cover;
-    background-repeat: no-repeat;
-} */
-
 .planets-wrapper {
     max-width: 100vw;
 }

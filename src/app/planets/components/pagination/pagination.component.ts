@@ -6,7 +6,7 @@ import { PaginationService } from '../../../service/pagination/pagination.servic
 @Component({
   selector: 'planets-pagination',
   templateUrl: './pagination.component.html',
-  styleUrls: ['./pagination.component.scss']
+  styleUrls: ['./pagination.component.css']
 })
 export class PaginationComponent {
   currentPageNumber: number = 0;
