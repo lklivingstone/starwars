@@ -54,19 +54,18 @@ export class PlanetslistComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.route.queryParams.subscribe(params => {
       this.page = params['page'];
-      console.log(this.page)
+      console.log(this.page, "ONINIT")
       this.fetchPlanets();
     });
 
     this.paginationCurrentPageSubscription = this.paginationService
     .getSelectedCurrentPage()
     .subscribe(selectedCurrentPage => {
-      this.loadingPlanets = true;
+      // this.loadingPlanets = true;
       this.page = Number(selectedCurrentPage);
       this.router.navigate([], {
         relativeTo: this.route,
         queryParams: { page: this.page },
-        queryParamsHandling: 'merge',
       });
     });
   }
@@ -118,6 +117,7 @@ export class PlanetslistComponent implements OnInit, OnDestroy {
     this.swapiPlanetsSubscription = this.swapiService.getPlanets(this.page).subscribe(
       (response: StarWarsAPIResult) => {
         this.loadingPlanets = false;
+        console.log(response.results)
         this.planetList = response.results;
       },
       (error: any) => {
